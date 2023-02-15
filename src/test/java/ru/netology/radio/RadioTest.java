@@ -3,7 +3,7 @@ package ru.netology.radio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class radioTest {
+class RadioTest {
     @Test
     public void shouldNextRadioStation() { //включение следующей станции
         Radio radio = new Radio();
