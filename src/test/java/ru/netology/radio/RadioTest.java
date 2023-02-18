@@ -5,6 +5,23 @@ import org.junit.jupiter.api.Test;
 
 class RadioTest {
     @Test
+    public void shouldTestStation() {
+        Radio radio = new Radio();
+        Assertions.assertEquals(0, radio.getMinCurrentNumber());
+        Assertions.assertEquals(9, radio.getMaxCurrentNumber());
+        Assertions.assertEquals(0, radio.getCurrentNumber());
+
+    }
+
+    @Test
+    public void shouldTestSoundVolume() {
+        Radio radio = new Radio(100);
+        Assertions.assertEquals(0, radio.getMinSoundVolume());
+        Assertions.assertEquals(100, radio.getMaxSoundVolume());
+        Assertions.assertEquals(0, radio.getSoundVolume());
+    }
+
+    @Test
     public void shouldNextRadioStation() { //включение следующей станции
         Radio radio = new Radio();
         radio.setCurrentNumber(1);
@@ -93,9 +110,9 @@ class RadioTest {
     @Test
     public void shouldNotAddSound() { //громкость с максимума не изменяется
         Radio radio = new Radio();
-        radio.setSoundVolume(10);
+        radio.setSoundVolume(100);
         radio.volumeUp();
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getSoundVolume();
 
         Assertions.assertEquals(expected, actual);
